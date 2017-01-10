@@ -24,7 +24,6 @@ getActivities() {
   })
 }
 
-//map through
 
 
 

@@ -4,29 +4,40 @@ import $ from 'jquery';
 class Activity extends React.Component {
 constructor(props) {
   super(props);
-  console.log("HERE ARE THE PROPS", props);
+
+
 }
 render() {
-  return (
-    <div>
-      <h3 className="collection">{this.props.actor_username}</h3>
-    </div>
+ let providerImage = () => {
+  if (this.props.provider === "twitter") {
+    return
+      <img src = 'twitter.png'></img>
+    }
+    else {
+      {this.props.provider}
 
-    {/* <div class="row">
-  <div class="col s12 m6">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Card Title</span>
-        <p>I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively.</p>
+    }
+
+  }
+
+  return (
+
+
+   <div className="row">
+    <div className="col s12 m6">
+      <div className="card blue-grey darken-1">
+      <div className="card-content white-text">
+        <span className="card-title">{this.props.provider}: {this.props.actor_username}</span>
+        <p> {this.props.activity_message} </p>
+        <p>{this.props.activity_date}</p>
       </div>
-      <div class="card-action">
+      <div className="card-action">
         <a href="#">This is a link</a>
-        <a href="#">This is a link</a>
+        <a href="#">Reply</a>
       </div>
     </div>
   </div>
-</div> */}
+</div>
   )
 }
 }
