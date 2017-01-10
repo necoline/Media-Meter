@@ -1,5 +1,4 @@
 import React from 'react';
-import Products from '../components/Products';
 import Analytics from '../components/Analytics';
 import Activity from '../components/Activity';
 
