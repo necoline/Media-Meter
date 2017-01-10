@@ -27,8 +27,8 @@ render() {
     <div className="col s12 m6">
       <div className="card blue-grey darken-1">
       <div className="card-content white-text">
-        <span className="card-title">{this.props.provider}: {this.props.actor_username}</span>
-        <p> {this.props.activity_message} </p>
+        <span className="card-title">{this.props.provider}: {this.props.actor_avator}</span>
+        <p> {this.props.actor_username}: {this.props.activity_message} </p>
         <p>{this.props.activity_date}</p>
       </div>
       <div className="card-action">
