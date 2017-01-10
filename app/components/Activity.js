@@ -32,8 +32,9 @@ render() {
         <p>{this.props.activity_date}</p>
       </div>
       <div className="card-action">
-        <a href="#">This is a link</a>
-        <a href="#">Reply</a>
+        <btn className="material-icons medium btn">thumb_up</btn>
+        <btn className="material-icons medium btn">chat_bubble_outline</btn>
+        <btn className="material-icons medium btn btn-small">call_made</btn>
       </div>
     </div>
   </div>
