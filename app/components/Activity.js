@@ -22,6 +22,25 @@ content() {
   return this.props.activity_attachment ? this.image() : this.message()
 }
 
+likes(){
+    return this.props.activity_likes
+}
+
+toggleLikes(e){
+  e.preventDefault()
+  let likes = this.props.activity_likes
+  console.log("HERE ARE THE LIKES", likes)
+  return likes += 1
+}
+
+shares(){
+    return this.props.activity_shares
+}
+
+comments(){
+    return this.props.activity_comments
+}
+
 render() {
   return (
    <div className="row">
@@ -31,14 +50,26 @@ render() {
         <span className="card-title">
           <img id="provider" src = {this.provider()}/>
         </span>
-        <div> <img id="avator" src = {this.props.actor_avator}/> {this.props.actor_username}: </div>
+        <div>
+          <img id="avator" src = {this.props.actor_avator}/>
+           {this.props.actor_username}:
+        </div>
         <div id="content">{this.content()}</div>
         <p>{this.props.activity_date}</p>
       </div>
       <div className="card-action">
-        <btn className="material-icons medium btn green accent-1">thumb_up</btn>
-        <btn className="material-icons medium btn">chat_bubble_outline</btn>
-        <btn className="material-icons medium btn btn-small">call_made</btn>
+        <p>
+          <btn className="material-icons waves-effect small" onClick={(e) => this.toggleLikes(e)}>thumb_up</btn>
+          {this.likes()}
+        </p>
+        <p>
+          <i className="material-icons waves-effect small">chat_bubble_outline</i>
+          {this.shares()}
+        </p>
+        <p>
+          <i className="material-icons waves-effect small">call_made</i>
+          {this.comments()}
+        </p>
       </div>
     </div>
   </div>
