@@ -42,3 +42,8 @@
 i:hover {
   color: orange;
 }
+
+body {
+    background-image: url("/images/particle.jpg");
+    background-size:contain;
+}
