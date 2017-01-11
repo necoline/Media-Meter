@@ -10,7 +10,17 @@ provider() {
   return `icons/${this.props.provider}.svg`
 }
 
+message() {
+  return (<p>{ this.props.activity_message }</p>)
+}
 
+image() {
+  return (<img src = {this.props.activity_attachment} />)
+}
+
+content() {
+  return this.props.activity_attachment ? this.image() : this.message()
+}
 
 render() {
   return (
@@ -18,8 +28,9 @@ render() {
     <div className="col s12 m6">
       <div className="card blue-grey darken-1">
       <div className="card-content white-text">
-        <span className="card-title"><img src = {this.provider()}/> <img src = {this.props.actor_avator}/></span>
-        <p> {this.props.actor_username}: {this.props.activity_message} </p>
+        <span className="card-title">
+        <img src = {this.provider()}/> <img src = {this.props.actor_avator}/></span>
+        <div> {this.props.actor_username}: {this.content()} </div>
         <p>{this.props.activity_date}</p>
       </div>
       <div className="card-action">
