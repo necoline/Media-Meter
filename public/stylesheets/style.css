@@ -1,17 +1,44 @@
+/*sizing*/
+
 #provider {
-  height: 50px;
+  height: 40px;
 }
 
 #avator {
   height: 40px;
 }
 
-/*#content {
-  height: 90px;
-  width: 90px;
-}*/
 
 #image {
   height: 120px;
   width: 120px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#message {
+  height: 120px;
+  width: 250px;
+}
+
+.container {
+  height: 130px;
+  width: 250px;
+}
+
+#item {
+  height: 300px;
+  width: 450px;
+}
+
+/*fonts*/
+
+#username {
+  font-size: 20px;
+}
+
+/*special effects*/
+
+i:hover {
+  color: orange;
 }

@@ -11,7 +11,7 @@ provider() {
 }
 
 message() {
-  return (<p>{ this.props.activity_message }</p>)
+  return (<p id="message">{ this.props.activity_message }</p>)
 }
 
 image() {
@@ -41,33 +41,38 @@ comments(){
     return this.props.activity_comments
 }
 
+// activityURL() {
+//   return link(this.props.activity_url)
+//
+// }
+
 render() {
   return (
     <div id="item" className="col s12">
-      <div className="card horizontal indigo lighten-2">
+      <div className="card horizontal grey darken-3 z-depth-4">
       <div className="card-content white-text">
-        <span className="left">
-          <img id="provider" src = {this.provider()}/>
-        </span>
         <div>
           <img id="avator" src = {this.props.actor_avator}/>
-           {this.props.actor_username}
+           <span id="username">{this.props.actor_name}</span>
         </div>
-        <div id="content" className="container row">{this.content()}</div>
-        <p>{this.props.activity_date}</p>
+        <div id="content" className="container">{this.content()}</div>
+        <p className="orange-text">{this.props.activity_date}</p>
       </div>
       <div className="card-action row">
+        <span className="left">
+          <img id="provider" src = {this.provider()} href={this.props.activity_url}/>
+        </span>
         <p>
-          <btn className="material-icons waves-effect small" onClick={(e) => this.toggleLikes(e)}>thumb_up</btn>
-          {this.likes()}
+          <i className="material-icons waves-effect small black-text" onClick={(e) => this.toggleLikes(e)}>thumb_up</i>
+          <span className="orange-text">{this.likes()}</span>
         </p>
         <p>
-          <i className="material-icons waves-effect small">chat_bubble_outline</i>
-          {this.shares()}
+          <i className="material-icons waves-effect small black-text">chat_bubble_outline</i>
+          <span className="orange-text">{this.shares()}</span>
         </p>
         <p>
-          <i className="material-icons waves-effect small">call_made</i>
-          {this.comments()}
+          <i className="material-icons waves-effect small black-text">call_made</i>
+          <span className="orange-text">{this.comments()}</span>
         </p>
       </div>
     </div>
