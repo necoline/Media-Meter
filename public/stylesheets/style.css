@@ -45,5 +45,7 @@ i:hover {
 
 body {
     background-image: url("/images/particle.jpg");
-    background-size:contain;
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-attachment:fixed;
 }
