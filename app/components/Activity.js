@@ -43,21 +43,20 @@ comments(){
 
 render() {
   return (
-   <div className="row">
-    <div className="col s12 m6">
-      <div className="card indigo lighten-2">
+    <div id="item" className="col s12">
+      <div className="card horizontal indigo lighten-2">
       <div className="card-content white-text">
-        <span className="card-title">
+        <span className="left">
           <img id="provider" src = {this.provider()}/>
         </span>
         <div>
           <img id="avator" src = {this.props.actor_avator}/>
-           {this.props.actor_username}:
+           {this.props.actor_username}
         </div>
-        <div id="content">{this.content()}</div>
+        <div id="content" className="container row">{this.content()}</div>
         <p>{this.props.activity_date}</p>
       </div>
-      <div className="card-action">
+      <div className="card-action row">
         <p>
           <btn className="material-icons waves-effect small" onClick={(e) => this.toggleLikes(e)}>thumb_up</btn>
           {this.likes()}
@@ -73,7 +72,7 @@ render() {
       </div>
     </div>
   </div>
-  </div>
+
   )
 }
 }
