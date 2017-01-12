@@ -54,14 +54,16 @@ render() {
       <div className="card horizontal z-depth-4" id="card">
       <div className="card-content">
         <div>
-          <img id="avator" src = {this.props.actor_avator}/>
-           <span id="username">{this.props.actor_name}</span>
+          <a href={this.props.actor_url}>
+            <img id="avator" src = {this.props.actor_avator}/>
+          </a>
+            <span id="username">{this.props.actor_name}</span>
         </div>
         <div id="content" className="container">{this.content()}</div>
         <p className="pink-text">{this.props.activity_date}</p>
       </div>
       <div className="card-action row">
-        <span className="left"><a href={this.props.activity_url}>
+        <span><a href={this.props.activity_url}>
           <img id="provider" src = {this.provider()} />
           </a>
         </span>
