@@ -4,6 +4,10 @@ import $ from 'jquery';
 class Activity extends React.Component {
 constructor(props) {
   super(props);
+this.state = {  liked: false,
+                shared: false,
+                messaged: false
+              };
 }
 
 provider() {
@@ -22,61 +26,61 @@ content() {
   return this.props.activity_attachment ? this.image() : this.message()
 }
 
-likes(){
-    return this.props.activity_likes
+responseStyling(responseType) {
+  let color = this.state[responseType] ? "pink-text" : "black-text";
+  return `material-icons waves-effect small ${color}`
 }
 
-toggleLikes(e){
-  e.preventDefault()
-  let likes = this.props.activity_likes
-  console.log("HERE ARE THE LIKES", likes)
-  return likes += 1
-}
-
-shares(){
-    return this.props.activity_shares
-}
-
-comments(){
-    return this.props.activity_comments
-}
-
-// activityURL() {
-//   return link(this.props.activity_url)
-//
+// resonpseNumbers(responseType) {
+//   let number = this.state.[responseType] ? this.state.[responseType].increment : this.state.[responseType].increment
+//   return (<span className="orange-text">${number}</span>)
 // }
+
+toggleResponse(e, choice){
+  e.preventDefault()
+
+
+  // this.props.update(choice, this.props.id)
+  //this.state.activity_likes += 1
+  this.setState({ [choice]: !this.state[choice]});
+  console.log("ABOUT TO FIRE THE UPDATE")
+
+}
+
 
 render() {
   return (
-    <div id="item" className="col s12">
-      <div className="card horizontal grey darken-3 z-depth-4">
-      <div className="card-content white-text">
+    <div id="item" className="col s12 m6 container">
+      <div className="card horizontal z-depth-4" id="card">
+      <div className="card-content">
         <div>
           <img id="avator" src = {this.props.actor_avator}/>
            <span id="username">{this.props.actor_name}</span>
         </div>
         <div id="content" className="container">{this.content()}</div>
-        <p className="orange-text">{this.props.activity_date}</p>
+        <p className="pink-text">{this.props.activity_date}</p>
       </div>
       <div className="card-action row">
-        <span className="left">
-          <img id="provider" src = {this.provider()} href={this.props.activity_url}/>
+        <span className="left"><a href={this.props.activity_url}>
+          <img id="provider" src = {this.provider()} />
+          </a>
         </span>
         <p>
-          <i className="material-icons waves-effect small black-text" onClick={(e) => this.toggleLikes(e)}>thumb_up</i>
-          <span className="orange-text">{this.likes()}</span>
+          <i className={this.responseStyling('liked')} onClick={(e) => this.toggleResponse(e, 'liked')}>thumb_up</i>
+          <span className="pink-text">{this.props.activity_likes}</span>
         </p>
         <p>
-          <i className="material-icons waves-effect small black-text">chat_bubble_outline</i>
-          <span className="orange-text">{this.shares()}</span>
+          <i className={this.responseStyling('shared')} onClick={(e) => this.toggleResponse(e, 'shared')}>chat_bubble_outline</i>
+          <span className="pink-text">{this.props.activity_shares}</span>
         </p>
         <p>
-          <i className="material-icons waves-effect small black-text">call_made</i>
-          <span className="orange-text">{this.comments()}</span>
+          <i className={this.responseStyling('messaged')} onClick={(e) => this.toggleResponse(e, 'messaged')}>call_made</i>
+          <span className="pink-text">{this.props.activity_comments}</span>
         </p>
       </div>
     </div>
   </div>
+
 
   )
 }

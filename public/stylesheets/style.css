@@ -29,23 +29,37 @@
 #item {
   height: 300px;
   width: 450px;
+
 }
 
-/*fonts*/
+/*styling*/
 
 #username {
   font-size: 20px;
 }
 
-/*special effects*/
+#card {
+  background-color: #ECEFF1;
+    width: 380px;
+}
 
-i:hover {
-  color: orange;
+#nav-bar {
+  background-color: #CFD8DC;
+  position: fixed;
+  z-index:3;
+}
+
+#page-content {
+  padding-top:70px;
 }
 
 body {
+  background-color: #455A64;
+}
+
+/*body {
     background-image: url("/images/particle.jpg");
     background-repeat: no-repeat;
     background-size:100%;
     background-attachment:fixed;
-}
+}*/
