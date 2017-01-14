@@ -32,10 +32,15 @@
 
 }
 
+.card-action {
+  float: right;
+}
+
+
 /*styling*/
 
 #username {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #card {
@@ -57,9 +62,10 @@ body {
   background-color: #455A64;
 }
 
-/*body {
-    background-image: url("/images/particle.jpg");
-    background-repeat: no-repeat;
-    background-size:100%;
-    background-attachment:fixed;
-}*/
+/*messaging*/
+
+.panel {
+    padding: 18px;
+    display: none;
+    background-color: white;
+}

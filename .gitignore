@@ -32,3 +32,5 @@ npm-debug.log
 public/vendor/
 
 .env
+
+.DS_Store

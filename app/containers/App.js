@@ -1,6 +1,7 @@
 import React from 'react';
 import Analytics from '../components/Analytics';
 import Activity from '../components/Activity';
+// import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends React.Component {
           <a href="#" data-activates="mobile" className="button-collapse"><i className="material-icons">menu</i></a>
         </div>
       </nav>
-      <div className="row s12 m6">
+      <div className="row s12 m6 container">
           <Analytics />
       </div>
 

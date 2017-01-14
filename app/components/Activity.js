@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import axios from 'axios';
 
 class Activity extends React.Component {
 constructor(props) {
@@ -39,6 +39,9 @@ responseStyling(responseType) {
 toggleResponse(e, choice){
   e.preventDefault()
 
+  //if choice = 'shared'
+  // then
+
 
   // this.props.update(choice, this.props.id)
   //this.state.activity_likes += 1
@@ -47,12 +50,35 @@ toggleResponse(e, choice){
 
 }
 
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-render() {
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+
+//
+// render() {
+// let responseWindow = () => {
+// if (responseButtonPressed) {
+//   return (<div> THIS IS THE RESPONSE WINDOW </div>)
+// } else {
+//   return ()
+// }
+// }
+
   return (
     <div id="item" className="col s12 m6 container">
       <div className="card horizontal z-depth-4" id="card">
-      <div className="card-content">
+      <div className="card-content ">
         <div>
           <a href={this.props.actor_url}>
             <img id="avator" src = {this.props.actor_avator}/>
@@ -62,7 +88,7 @@ render() {
         <div id="content" className="container">{this.content()}</div>
         <p className="pink-text">{this.props.activity_date}</p>
       </div>
-      <div className="card-action row">
+      <div className="card-action container">
         <span><a href={this.props.activity_url}>
           <img id="provider" src = {this.provider()} />
           </a>
@@ -76,10 +102,16 @@ render() {
           <span className="pink-text">{this.props.activity_shares}</span>
         </p>
         <p>
-          <i className={this.responseStyling('messaged')} onClick={(e) => this.toggleResponse(e, 'messaged')}>call_made</i>
-          <span className="pink-text">{this.props.activity_comments}</span>
+          <a className="accordion">
+            <i className={this.responseStyling('messaged')} onClick={(e) => this.toggleResponse(e, 'messaged')}>call_made</i>
+            <span className="pink-text">{this.props.activity_comments}</span>
+          </a>
         </p>
       </div>
+      <div className="panel">
+        <p>this works</p>
+      </div>
+      { responseWindow }
     </div>
   </div>
 

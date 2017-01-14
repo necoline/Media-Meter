@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import axios from 'axios';
 import Activity from './Activity';
 
 class Analytics extends React.Component {
@@ -15,16 +15,18 @@ constructor(props) {
 
 componentDidMount(){
   this.getActivities();
+  axios.get(`${this.baseUrl}`)
+    .then(function (activities => {
+      this.setState({ activities })
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
-getActivities() {
-  $.ajax({
-    url: `${this.baseUrl}`,
-    type: 'GET'
-  }).done( activities => {
-    this.setState({ activities });
-  })
-}
+
+
 
 testRun(choice, id) {
   console.log(choice, id, "here is analytic id")
@@ -46,6 +48,7 @@ render() {
   })
 
   return (
+
     <div id="page-content">
       { activities }
     </div>
