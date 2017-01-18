@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import axios from 'axios';
 
 class Chart extends React.Component {
 constructor(props) {
@@ -8,8 +8,7 @@ constructor(props) {
 
 render() {
   return (
-
-//provider
+    <h1>CHART!!!</h1>
 
   )
 }
