@@ -7,6 +7,7 @@ constructor(props) {
   super(props);
   this.baseUrl = `https://nuvi-challenge.herokuapp.com/activities`;
   this.state = { activities: [] };
+  this.changeCount = this.changeCount.bind(this);
 }
 
 componentDidMount(){
@@ -20,25 +21,21 @@ componentDidMount(){
     });
 }
 
+changeCount(choice, id) {
 
-
-
-testRun(choice, id) {
-  console.log(choice, id, "here is analytic id")
-  // the activity id needs to be found so we know we are incrementing the right one
-  // we can increment the count with .increment
-  // after we increment we need to .decrement if we click the button again.
-  //this.setState { change state on analytics count}
-  console.log("im firing on the analytics component")
+  const activities = this.state.activities.map( activity => {
+    if (activity.id === id) {
+      activity[choice] += 1
+    }
+    return activity
+  })
+  this.setState({ activities })
 }
 
-
-
 render() {
-  console.log(this.state, "HERE IS THE STATE")
   let activities = this.state.activities.map( activity => {
     return (
-      <Activity key={activity.id} update={this.testRun} {...activity}/>
+      <Activity key={activity.id} changeCount={this.changeCount} {...activity}/>
     )
   })
 

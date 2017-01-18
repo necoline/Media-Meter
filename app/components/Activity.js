@@ -10,6 +10,8 @@ this.state = {  liked: false,
               };
 }
 
+
+
 provider() {
   return `icons/${this.props.provider}.svg`
 }
@@ -31,41 +33,22 @@ responseStyling(responseType) {
   return `material-icons waves-effect small ${color}`
 }
 
-// resonpseNumbers(responseType) {
-//   let number = this.state.[responseType] ? this.state.[responseType].increment : this.state.[responseType].increment
-//   return (<span className="orange-text">${number}</span>)
-// }
-
 toggleResponse(e, choice){
   e.preventDefault()
 
-  //if choice = 'shared'
-  // then
-
-
-  // this.props.update(choice, this.props.id)
-  //this.state.activity_likes += 1
+  var choiceObj = {
+    liked: "activity_likes",
+    shared: "activity_shares",
+    messaged: "activity_comments"
+  }
+  this.props.changeCount(choiceObj[choice], this.props.id);
   this.setState({ [choice]: !this.state[choice]});
-  console.log("ABOUT TO FIRE THE UPDATE")
-
 }
 
 
 
 
-// for (i = 0; i < acc.length; i++) {
-//     acc[i].onclick = function(){
-//         this.classList.toggle("active");
-//         var panel = this.nextElementSibling;
-//         if (panel.style.display === "block") {
-//             panel.style.display = "none";
-//         } else {
-//             panel.style.display = "block";
-//         }
-//     }
-// }
 
-//
  render() {
 // let responseWindow = () => {
 // if (responseButtonPressed) {
