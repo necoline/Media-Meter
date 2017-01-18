@@ -41,13 +41,9 @@ toggleResponse(e, choice){
     shared: "activity_shares",
     messaged: "activity_comments"
   }
-  this.props.changeCount(choiceObj[choice], this.props.id);
+  this.props.changeCount(this.state[choice], choiceObj[choice], this.props.id);
   this.setState({ [choice]: !this.state[choice]});
 }
-
-
-
-
 
  render() {
 // let responseWindow = () => {

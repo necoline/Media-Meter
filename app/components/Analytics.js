@@ -21,11 +21,10 @@ componentDidMount(){
     });
 }
 
-changeCount(choice, id) {
-
+changeCount(choiceState, choice, id) {
   const activities = this.state.activities.map( activity => {
     if (activity.id === id) {
-      activity[choice] += 1
+      choiceState ? activity[choice] -= 1 : activity[choice] += 1
     }
     return activity
   })
