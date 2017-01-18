@@ -5,20 +5,15 @@ import Activity from './Activity';
 class Analytics extends React.Component {
 constructor(props) {
   super(props);
-  this.getActivities = this.getActivities.bind(this);
   this.baseUrl = `https://nuvi-challenge.herokuapp.com/activities`;
   this.state = { activities: [] };
 }
 
-
-
-
 componentDidMount(){
-  this.getActivities();
-  axios.get(`${this.baseUrl}`)
-    .then(function (activities => {
+  axios.get(this.baseUrl)
+    .then(response => {
+       let activities = response.data
       this.setState({ activities })
-      console.log(response);
     })
     .catch(function (error) {
       console.log(error);
@@ -40,19 +35,19 @@ testRun(choice, id) {
 
 
 render() {
+  console.log(this.state, "HERE IS THE STATE")
   let activities = this.state.activities.map( activity => {
     return (
-      <Activity key={activity.id} update={this.testRun} {...activity}
-      />
+      <Activity key={activity.id} update={this.testRun} {...activity}/>
     )
   })
+
 
   return (
 
     <div id="page-content">
       { activities }
     </div>
-
     )
   }
 }

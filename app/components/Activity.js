@@ -50,23 +50,23 @@ toggleResponse(e, choice){
 
 }
 
-var acc = document.getElementsByClassName("accordion");
-var i;
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    }
-}
+
+
+// for (i = 0; i < acc.length; i++) {
+//     acc[i].onclick = function(){
+//         this.classList.toggle("active");
+//         var panel = this.nextElementSibling;
+//         if (panel.style.display === "block") {
+//             panel.style.display = "none";
+//         } else {
+//             panel.style.display = "block";
+//         }
+//     }
+// }
 
 //
-// render() {
+ render() {
 // let responseWindow = () => {
 // if (responseButtonPressed) {
 //   return (<div> THIS IS THE RESPONSE WINDOW </div>)
@@ -108,10 +108,6 @@ for (i = 0; i < acc.length; i++) {
           </a>
         </p>
       </div>
-      <div className="panel">
-        <p>this works</p>
-      </div>
-      { responseWindow }
     </div>
   </div>
 
