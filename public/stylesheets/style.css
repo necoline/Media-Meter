@@ -62,10 +62,18 @@ body {
   background-color: #455A64;
 }
 
-/*messaging*/
+/*Chart*/
 
-.panel {
-    padding: 18px;
-    display: none;
-    background-color: white;
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+
+
+#chartform {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }

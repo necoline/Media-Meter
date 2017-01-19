@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Activity from './Activity';
+import Chart from './Chart';
 
 class Analytics extends React.Component {
 constructor(props) {
@@ -34,15 +35,18 @@ changeCount(choiceState, choice, id) {
 render() {
   let activities = this.state.activities.map( activity => {
     return (
-      <Activity key={activity.id} changeCount={this.changeCount} {...activity}/>
+      <div >
+        <Activity key={activity.id} changeCount={this.changeCount} {...activity}/>
+      </div>
+
     )
   })
 
 
   return (
-
-    <div id="page-content">
-      { activities }
+    <div className="row" id="page-content">
+      {/* { activities } */}
+      <Chart activities={this.state.activities}/>
     </div>
     )
   }
