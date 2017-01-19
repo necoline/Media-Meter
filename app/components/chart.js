@@ -11,9 +11,17 @@ class Chart extends React.Component {
   combineSocialCounts() {
     let activities = this.props.activities;
 
-    let facebookActs = activities.filter(data => {
-      debugger
-    })
+    let filterfunc = (provider) => {
+      return activities.filter(activity => {
+        return activity.provider === provider ? true : false
+      }).length
+    }
+
+    let facebookActs = filterfunc("facebook")
+    let twitterActs = filterfunc("twitter")
+    let instagramActs = filterfunc("instagram")
+    let tumblrActs = filterfunc("tumblr")
+
     debugger
   }
 
