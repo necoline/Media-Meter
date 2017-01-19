@@ -32,6 +32,7 @@ changeCount(choiceState, choice, id) {
   this.setState({ activities })
 }
 
+
 render() {
   let activities = this.state.activities.map( activity => {
     return (

@@ -22,12 +22,12 @@ class Chart extends React.Component {
     let instagramActs = filterfunc("instagram")
     let tumblrActs = filterfunc("tumblr")
 
-    debugger
+    return [facebookActs, twitterActs, instagramActs, tumblrActs]
   }
 
   renderAxis() {
      var data = this.combineSocialCounts()
-    // var data = [4, 8, 15, 16, 23, 42];
+     var names = ["facebook", "twitter", "instagram", "tumblr"]
 
     var width = 420,
     barHeight = 30;
@@ -49,12 +49,27 @@ bar.append("rect")
     .attr("width", x)
     .attr("height", barHeight - 1);
 
-bar.append("text")
-    .attr("x", function(d) { return x(d) - 3; })
-    .attr("y", barHeight / 2)
-    .attr("dy", ".35em")
-    .text(function(d) { return d; });
+bar.append("svg:image")
+    .attr("xlink:href", function(d,i){ return `icons/${names[i]}.svg` })
+    .attr("x", function(d) { return 10 })
+    .attr("width", 25)
+    .attr("height", 25)
+    .attr("y", barHeight / 10);
 
+    bar.append("text")
+        .attr("x", 50)
+        .attr("y", barHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d) { return d; })
+        .style('fill', '#FFFFFF');
+
+
+// bar.append("svg:image")
+//         .attr("xlink:href", "http://www.clker.com/cliparts/1/4/5/a/1331068897296558865Sitting%20Racoon.svg")
+//         .attr("width", 200)
+//         .attr("height", 200)
+//         .attr("x", 228)
+//         .attr("y",53);
 
   }
 
