@@ -61,7 +61,7 @@ bar.append("svg:image")
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d; })
-        .style('fill', '#FFFFFF');
+        .style('fill', 'grey');
 
 
 // bar.append("svg:image")

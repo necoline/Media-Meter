@@ -29,7 +29,7 @@ content() {
 }
 
 responseStyling(responseType) {
-  let color = this.state[responseType] ? "pink-text" : "black-text";
+  let color = this.state[responseType] ? "blue-text" : "grey-text";
   return `material-icons waves-effect small ${color}`
 }
 
@@ -65,7 +65,7 @@ toggleResponse(e, choice){
             <span id="username">{this.props.actor_name}</span>
         </div>
         <div id="content" className="container">{this.content()}</div>
-        <p className="pink-text">{this.props.activity_date}</p>
+        <p className="blue-text">{this.props.activity_date}</p>
       </div>
       <div className="card-action container">
         <span><a href={this.props.activity_url}>
@@ -74,17 +74,15 @@ toggleResponse(e, choice){
         </span>
         <p>
           <i className={this.responseStyling('liked')} onClick={(e) => this.toggleResponse(e, 'liked')}>thumb_up</i>
-          <span className="pink-text">{this.props.activity_likes}</span>
+          <span className="blue-text">{this.props.activity_likes}</span>
         </p>
         <p>
           <i className={this.responseStyling('shared')} onClick={(e) => this.toggleResponse(e, 'shared')}>chat_bubble_outline</i>
-          <span className="pink-text">{this.props.activity_shares}</span>
+          <span className="blue-text">{this.props.activity_shares}</span>
         </p>
         <p>
-          <a className="accordion">
             <i className={this.responseStyling('messaged')} onClick={(e) => this.toggleResponse(e, 'messaged')}>call_made</i>
-            <span className="pink-text">{this.props.activity_comments}</span>
-          </a>
+            <span className="blue-text">{this.props.activity_comments}</span>
         </p>
       </div>
     </div>
