@@ -46,8 +46,14 @@ render() {
 
   return (
     <div className="row" id="page-content">
-      {/* { activities } */}
-      <Chart activities={this.state.activities}/>
+
+      <div className="col m6">
+        { activities }
+      </div>
+      <div className="col m6 offset-m5" id="graph">
+        <Chart activities={this.state.activities}/>
+      </div>
+
     </div>
     )
   }

@@ -71,6 +71,9 @@ body {
   width: 100%;
 }
 
+#graph{
+  position: fixed;
+}
 
 #chartform {
   position: absolute;
