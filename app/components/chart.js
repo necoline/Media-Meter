@@ -36,18 +36,33 @@ var x = d3.scaleLinear()
     .domain([0, d3.max(data)])
     .range([0, width]);
 
+var color = d3.scaleOrdinal()
+    .range(["#4FC3F7", "#03A9F4", "#0288D1", "#01579B"]);
+    //
+//     .attr("fill", function(d) {
+//       return "rgb(0, 0, " + (d * 10) + ")";
+//     })
+
 var chart = d3.select(this.refs.axis)
     .attr("width", width)
     .attr("height", barHeight * data.length);
 
+
+
 var bar = chart.selectAll("g")
     .data(data)
   .enter().append("g")
-     .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+     .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; })
+
+
 
 bar.append("rect")
     .attr("width", x)
-    .attr("height", barHeight - 1);
+    .attr("height", barHeight - 1)
+    .style('fill', color);
+
+
+
 
 bar.append("svg:image")
     .attr("xlink:href", function(d,i){ return `icons/${names[i]}.svg` })
@@ -56,12 +71,15 @@ bar.append("svg:image")
     .attr("height", 25)
     .attr("y", barHeight / 10);
 
+
+
     bar.append("text")
         .attr("x", 50)
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d; })
-        .style('fill', 'grey');
+        .style('fill', 'white');
+
 
 
 // bar.append("svg:image")

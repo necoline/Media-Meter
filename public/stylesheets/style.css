@@ -52,7 +52,9 @@
   background-color: #0277bd;
   position: fixed;
   z-index:3;
+  opacity: 0.7;
 }
+
 
 #page-content {
   padding-top:70px;
@@ -62,9 +64,6 @@ body {
   background-color: #f5f5f5;
 }
 
-.red-text {
-  opacity: 90%;
-}
 
 /*Chart*/
 

@@ -15,7 +15,7 @@ class App extends React.Component {
     <div>
       <nav id="nav-bar">
         <div className="nav-wrapper">
-          <a href="/" className="brand-logo">  Media Meter</a>
+          <a href="/" className="brand-logo">Media Meter</a>
           <a href="#" data-activates="mobile" className="button-collapse"><i className="material-icons">menu</i></a>
         </div>
       </nav>
