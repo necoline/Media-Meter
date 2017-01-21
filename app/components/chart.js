@@ -30,14 +30,13 @@ class Chart extends React.Component {
      var names = ["facebook", "twitter", "instagram", "tumblr"]
 
     var width = 420,
-    barHeight = 30;
+    barHeight = 45;
 
 var x = d3.scaleLinear()
     .domain([0, d3.max(data)])
     .range([0, width]);
 
-var color = d3.scaleOrdinal()
-    .range(["#4FC3F7", "#03A9F4", "#0288D1", "#01579B"]);
+var color = ["#4FC3F7", "#03A9F4", "#0288D1", "#01579B"];
     //
 //     .attr("fill", function(d) {
 //       return "rgb(0, 0, " + (d * 10) + ")";
@@ -59,7 +58,7 @@ var bar = chart.selectAll("g")
 bar.append("rect")
     .attr("width", x)
     .attr("height", barHeight - 1)
-    .style('fill', color);
+    .style('fill', function(d, i) { return color[i] });
 
 
 
@@ -69,7 +68,7 @@ bar.append("svg:image")
     .attr("x", function(d) { return 10 })
     .attr("width", 25)
     .attr("height", 25)
-    .attr("y", barHeight / 10);
+    .attr("y", barHeight / 5);
 
 
 
