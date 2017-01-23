@@ -12,11 +12,11 @@ constructor(props) {
       <div className='col s12 m3'>
         <div className="card horizontal z-depth-4" id="comment-card">
           <div className="card-content ">
-            <textarea placeholder="write your comment here"></textarea>
+            <textarea placeholder="write your comment here" id="comment-box"></textarea>
           </div>
-          <div className='card-action'>
-            <button className='btn' onClick={(e) => this.props.toggleResponse(e, 'messaged')}>Send</button>
-            <button className='btn' onClick={(e) => this.props.toggleMessage(e)}><i className="material-icons right">close</i></button>
+          <div className="card-action">
+            <i className="material-icons waves-effect small blue-text" id="send" onClick={(e) => this.props.toggleResponse(e, "messaged")}>trending_flat</i>
+            <i className="material-icons waves-effect small blue-text" onClick={(e) => this.props.toggleMessage(e)}>close</i>
           </div>
         </div>
       </div>

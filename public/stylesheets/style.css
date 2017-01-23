@@ -51,7 +51,16 @@
 #comment-card {
   background-color: #E0E0E0;
     width: 380px;
-    height:230px;
+}
+
+#comment-box {
+  background-color: #FFFFFF;
+  width: 250px;
+  height: 100px;
+}
+
+#send {
+  margin-bottom: 15px;
 }
 
 #nav-bar {
