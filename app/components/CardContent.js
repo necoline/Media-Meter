@@ -37,10 +37,10 @@ render() {
         </a>
           <span id="username">{this.props.actor_name}</span>
       </div>
-      <div id="content" className="container">{this.content()}</div>
+      <div id="content">{this.content()}</div>
       <p className="blue-text">{this.props.activity_date}</p>
     </div>
-    <div className="card-action container">
+    <div className="card-action">
       <span><a href={this.props.activity_url}>
         <img id="provider" src= {this.provider()} />
         </a>
