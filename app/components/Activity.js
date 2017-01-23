@@ -40,7 +40,7 @@ toggleMessage(e) {
 
 
 
-something() {
+cardDisplay() {
   if (this.state.isMessaging) {
     return (<CommentBox
       toggleResponse={this.toggleResponse}
@@ -61,7 +61,7 @@ something() {
   return (
     <div id="item" className="col s12 m6 container">
 
-      {this.something()}
+      {this.cardDisplay()}
 
 
     </div>
