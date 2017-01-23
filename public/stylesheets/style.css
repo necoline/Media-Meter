@@ -48,6 +48,12 @@
     width: 380px;
 }
 
+#comment-card {
+  background-color: #E0E0E0;
+    width: 380px;
+    height:230px;
+}
+
 #nav-bar {
   background-color: #03A9F4;
   position: fixed;

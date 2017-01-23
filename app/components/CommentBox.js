@@ -10,7 +10,7 @@ constructor(props) {
   render (){
     return(
       <div className='col s12 m3'>
-        <div className="card horizontal z-depth-4" id="card">
+        <div className="card horizontal z-depth-4" id="comment-card">
           <div className="card-content ">
             <textarea placeholder="write your comment here"></textarea>
           </div>
