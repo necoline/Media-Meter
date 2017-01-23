@@ -24,7 +24,10 @@ componentDidMount(){
 
 changeCount(choiceState, choice, id) {
   const activities = this.state.activities.map( activity => {
-    if (activity.id === id) {
+
+    if (activity.id === id && choice === "activity_comments") {
+      activity[choice] += 1
+    } else if (activity.id === id) {
       choiceState ? activity[choice] -= 1 : activity[choice] += 1
     }
     return activity

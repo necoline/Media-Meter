@@ -15,8 +15,8 @@ constructor(props) {
             <textarea placeholder="write your comment here"></textarea>
           </div>
           <div className='card-action'>
-            <button className='btn' onClick={this.toggleMessage}>Send</button>
-            <button className='btn' onClick={(e) => this.props.toggleMessage(e)}><i class="material-icons right">close</i></button>
+            <button className='btn' onClick={(e) => this.props.toggleResponse(e, 'messaged')}>Send</button>
+            <button className='btn' onClick={(e) => this.props.toggleMessage(e)}><i className="material-icons right">close</i></button>
           </div>
         </div>
       </div>

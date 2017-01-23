@@ -18,33 +18,33 @@ this.state = {  liked: false,
 
 toggleResponse(e, choice){
   e.preventDefault()
-
   var choiceObj = {
     liked: "activity_likes",
     shared: "activity_shares",
     messaged: "activity_comments"
   }
   this.props.changeCount(this.state[choice], choiceObj[choice], this.props.id);
-  this.setState({ [choice]: !this.state[choice]});
+
+  if (choice === "messaged") {
+    this.setState({ [choice]: true});
+    this.setState({ isMessaging: false});
+  } else {
+    this.setState({ [choice]: !this.state[choice]});
+  }
 }
 
 toggleMessage(e) {
-  e.preventDefault()
+    e.preventDefault()
   this.setState({ isMessaging: !this.state.isMessaging});
 }
-
-
-cardItem() {
-  console.log("card item")
-}
-
-
 
 
 
 something() {
   if (this.state.isMessaging) {
-    return (<CommentBox toggleMessage={this.toggleMessage}/>)
+    return (<CommentBox
+      toggleResponse={this.toggleResponse}
+      toggleMessage={this.toggleMessage}/>)
   } else {
     return (<CardContent
       liked={this.state.liked}
